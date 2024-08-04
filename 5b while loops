@@ -1,0 +1,336 @@
+Task 11
+Modify the example to keep looping if the user types "y".
+
+python
+Copy code
+keepGoing = "yes"
+while keepGoing == "yes" or keepGoing == "y":
+    print("Since the variable keepGoing is still 'yes' or 'y', I am going to keep going.")
+    keepGoing = input("Do you want me to keep going? (yes/y to continue) ")
+print("Ok, you typed something other than 'yes' or 'y', so I stopped.")
+
+Task 12
+The program continues looping if the user types "yes" or "y".
+
+python
+Copy code
+keepGoing = "yes"
+while keepGoing == "yes" or keepGoing == "y":
+    print("Continuing.")
+    keepGoing = input("Do you want me to keep going? (yes/y to continue) ")
+print("Ok, stopping.")
+
+Task 13
+Another way to continue looping if the user types "yes" or "y".
+
+python
+Copy code
+keepGoing = "yes"
+while keepGoing in ["yes", "y"]:
+    print("Continuing.")
+    keepGoing = input("Do you want me to keep going? (yes/y to continue) ")
+print("Ok, stopping.")
+
+Task 14
+The program loops until the user types "no" or "no thanks".
+
+python
+Copy code
+keepGoing = "yes"
+while keepGoing not in ["no", "no thanks"]:
+    print("Continuing.")
+    keepGoing = input("Do you want me to keep going? (no/no thanks to stop) ")
+print("Ok, stopping.")
+Task 14b
+Using a break statement to stop the loop.
+
+python
+Copy code
+while True:
+    print("Continuing.")
+    keepGoing = input("Do you want me to keep going? (no/no thanks to stop) ")
+    if keepGoing in ["no", "no thanks"]:
+        print("Ok, stopping.")
+        break
+
+Task 15
+The program loops if the user types "hey", "woo", or "yes".
+
+python
+Copy code
+while True:
+    print("Continuing.")
+    keepGoing = input("Do you want me to keep going? (hey/woo/yes to continue) ")
+    if keepGoing not in ["hey", "woo", "yes"]:
+        print("Ok, stopping.")
+        break
+
+Task 16
+The program continues looping if the user types anything other than "no".
+
+python
+Copy code
+while True:
+    print("Continuing.")
+    keepGoing = input("Do you want me to keep going? (type 'no' to stop) ")
+    if keepGoing == "no":
+        print("Ok, stopping.")
+        break
+
+Task 17
+The program keeps going unless the user types "done", "quit", or "exit", case-insensitive.
+
+python
+Copy code
+while True:
+    print("Continuing.")
+    keepGoing = input("Do you want me to keep going? (done/quit/exit to stop) ").lower()
+    if keepGoing in ["done", "quit", "exit"]:
+        print("Ok, stopping.")
+        break
+
+Task 18
+A program that keeps track of a count based on user input.
+
+python
+Copy code
+count = 0
+
+while True:
+    print(f"The counter is currently {count}.")
+    action = input("Would you like to add one, subtract one, or quit? ").strip().lower()
+
+    if action == "add":
+        count += 1
+    elif action == "subtract":
+        count -= 1
+    elif action == "quit":
+        print(f"Your final tally is {count}.")
+        print("Thanks for using my counter program!")
+        break
+    else:
+        print("Invalid input, please type 'add', 'subtract', or 'quit'.")
+
+Task 19
+A simple word guesser game.
+
+python
+Copy code
+print("Welcome to the word guesser!")
+secretWord = "water"
+guess = ""
+while guess != secretWord:
+    guess = input("What is your guess? ")
+print("You got it!")
+
+Task 19b
+Using a break statement in the word guesser game.
+
+python
+Copy code
+print("Welcome to the word guesser!")
+secretWord = "water"
+while True:
+    guess = input("What is your guess? ")
+    if guess == secretWord:
+        print("You got it!")
+        break
+
+Task 20
+Display a message before checking the guess.
+
+python
+Copy code
+print("Welcome to the word guesser!")
+secretWord = "water"
+while True:
+    guess = input("What is your guess? ")
+    print("Let me check to determine whether that's right.")
+    if guess == secretWord:
+        print("You got it!")
+        break
+
+Task 21
+Display a message if the guess is wrong.
+
+python
+Copy code
+print("Welcome to the word guesser!")
+secretWord = "water"
+guess = input("What is your guess? ")
+while guess != secretWord:
+    print("No, try again.")
+    guess = input("What is your guess? ")
+print("You got it!")
+Task 21b
+Using break to avoid duplicate input() in the word guesser game.
+
+python
+Copy code
+print("Welcome to the word guesser!")
+secretWord = "water"
+while True:
+    guess = input("What is your guess? ")
+    if guess == secretWord:
+        print("You got it!")
+        break
+    else:
+        print("No, try again.")
+
+Task 22
+Number doubler program.
+
+python
+Copy code
+print("Welcome to the number doubler.")
+num = 0
+while num != -1:
+    num = int(input("Type a number, or type -1 to quit: "))
+    print(f"Double your number is {num * 2}.")
+print("Exiting.")
+Task 22b
+Number doubler using break.
+
+python
+Copy code
+print("Welcome to the number doubler.")
+while True:
+    num = int(input("Type a number, or type -1 to quit: "))
+    if num == -1:
+        print("Exiting.")
+        break
+    else:
+        print(f"Double your number is {num * 2}.")
+
+Task 23
+Number squarer instead of doubler.
+
+python
+Copy code
+print("Welcome to the number squarer.")
+while True:
+    num = int(input("Type a number, or type -1 to quit: "))
+    if num == -1:
+        print("Exiting.")
+        break
+    else:
+        print(f"Your number squared is {num ** 2}.")
+
+Task 24
+No display for -1 in the number squarer.
+
+python
+Copy code
+print("Welcome to the number squarer.")
+while True:
+    num = int(input("Type a number, or type -1 to quit: "))
+    if num == -1:
+        print("Exiting.")
+        break
+    else:
+        print(f"Your number squared is {num ** 2}.")
+
+Task 25
+Animal sounds program.
+
+python
+Copy code
+animal = input("Name an animal, or say 'moose' to exit: ")
+while animal != "moose":
+    print(f"The {animal} says 'meow'.")
+    animal = input("Name an animal, or say 'moose' to exit: ")
+print("Moose out.")
+
+Task 26
+Program to ask for both animal name and sound.
+
+python
+Copy code
+animal = input("Name an animal, or say 'moose' to exit: ")
+while animal != "moose":
+    sound = input("What sound does the animal make? ")
+    print(f"The {animal} says '{sound}'.")
+    animal = input("Name an animal, or say 'moose' to exit: ")
+print("Moose out.")
+
+Task 27
+Exit loop only if animal is "moose" and sound is "meow".
+
+python
+Copy code
+while True:
+    animal = input("Name an animal: ").strip().lower()
+    sound = input("What sound does the animal make? ").strip().lower()
+    if animal == "moose" and sound == "meow":
+        print("Moose out.")
+        break
+    else:
+        print(f"The {animal} says '{sound}'.")
+
+Task 28
+Duck Duck Goose simulator.
+
+python
+Copy code
+import random
+import time
+
+print("This is a Duck, Duck, Goose Simulator. Have fun!!!!!")
+choices = ["Goose", "Duck", "Duck", "Duck"]
+one_choice = random.choice(choices)
+while one_choice != "Goose":
+    print(f"{one_choice}...")
+    one_choice = random.choice(choices)
+    time.sleep(0.5)
+print("Goose!")
+
+Task 29
+Word guesser with random responses.
+
+python
+Copy code
+import random
+
+print("Welcome to the word guesser!")
+secretWord = "water"
+responses = [
+    "Not yet, try again.",
+    "I bet you'll get it, keep trying!",
+    "That's not it.",
+    "I appreciate your patience, but you haven't guessed it yet."
+]
+
+while True:
+    guess = input("What is your guess? ").strip().lower()
+    if guess == secretWord:
+        print("You got it!")
+        break
+    else:
+        print(random.choice(responses))
+
+Task 29b
+Collect names starting with "c".
+
+names_starting_with_c = []
+
+while True:
+    name = input("Enter a name, or q to quit: ").strip().lower()
+    if name == "q":
+        break
+    if name.startswith("c"):
+        names_starting_with_c.append(name)
+
+print(f"These names start with the letter 'c': {names_starting_with_c}")
+
+
+
+
+
+
+
+
+Continue generating
+
+
+
+ChatGPT c
