@@ -1,0 +1,66 @@
+task 24 # Sample data, assuming it is read from a file
+data = [
+    "Bob:red",
+    "Lacy:blue",
+    "Sue:green",
+    "Joe:blue",
+    "Frank:red"
+]
+
+color_of_interest = input("Filter by color: ").strip()
+people_who_like_color = []
+
+for entry in data:
+    name, color = entry.split(":")
+    if color == color_of_interest:
+        people_who_like_color.append(name)
+
+for person in people_who_like_color:
+    print(person)
+
+# Sample data, assuming it is read from a file
+data = [
+    "Bob:red",
+    "Lacy:blue",
+    "Sue:green",
+    "Joe:blue",
+    "Frank:red"
+]
+
+color_of_interest = input("Filter by color: ").strip()
+people_who_like_color = []
+
+for entry in data:
+    name, color = entry.split(":")
+    if color == color_of_interest:
+        people_who_like_color.append(name)
+
+for person in people_who_like_color:
+    print(person)
+
+print(f"Found {len(people_who_like_color)} match(es).")
+
+
+
+tasking 26 
+# Sample data, assuming it is read from a file
+data = [
+    "Bob:red:70",
+    "Lacy:blue:65",
+    "Sue:green:72",
+    "Joe:blue:68",
+    "Frank:red:71"
+]
+
+heart_rate_threshold = 70
+people_below_threshold = []
+
+for entry in data:
+    name, color, heart_rate = entry.split(":")
+    heart_rate = int(heart_rate)
+    if heart_rate < heart_rate_threshold:
+        people_below_threshold.append(name)
+
+print("These people have a heart rate that is less than 70:")
+for person in people_below_threshold:
+    print(person)
